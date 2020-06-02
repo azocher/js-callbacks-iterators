@@ -4,5 +4,11 @@ var mneumonics = ['My Very Excellent Mother Just Sent Me Nine Pizzas', 'Please E
 // For example, the 0th element of the new array should be:
 // ['My', 'Very', 'Excellent', 'Mother', 'Just', 'Sent', 'Me', 'Nine', 'Pizzas']
 
-// Your code here!
+function splitWords(item) {
+    let newArr = [];
+    newArr.push(item.split(" "));
+    return newArr;
+}
+
+console.log(mneumonics.map(splitWords));
 

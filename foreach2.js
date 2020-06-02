@@ -7,8 +7,12 @@
  var foods = [
   {name: "Pizza", level: "very"},
   {name: "Tacos", level: "mostly"},
-  {name: "Cottage Cheese", level: "not very"}
+  {name: "Cottage Cheese", level: "not very"},
 ];
 
-// your code here
+foods.forEach(function(item) {
+  console.log(`${item.name} is ${item.level} delicious`);
+})
+
+
 
