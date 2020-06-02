@@ -30,17 +30,25 @@ var phoneBook = [
 // Take the phonebook above and use map to return a new phonebook that includes a country-code that matches the rest of the phone number.
 // For example, the 0th element of the new array should be {Abe: "1-111-111-1111"}
 
-function addCountryCodes() {
-  var newNum = "";
-  phoneBook.forEach(function(item, index) {
-    for (let name in item) {
-      let origNum = item[name];
-      let newCode = `${item[name][0]} - `;
-      item[name] = newCode + origNum;
-      newNum = item[name]
-    }
-  })
-  return newNum;
-};
+// write a function that takes an array of objects
+function countryCodes(obj) {
+  // store the value at each key value pair in a variable
+  // becuase Object.values returns an array format, but our arrays will each only be of length 1, I use bracket notation to access as string
+  var origKey = Object.keys(obj)[0];
+  var origVal = Object.values(obj)[0];
+  
+  // store the repeated number as a single digit string in a variable
+  var num = origVal[0];
+  
+  // concatenate the number to the start of the original value in country code format
+  var newVal = `${num}-${origVal}`;
 
-console.log(phoneBook.map(addCountryCodes));
+  // store as a variable the original key with the new value in a new object
+  var newObj = {};
+  newObj[origKey] = newVal;
+
+  // return this new object as the result of this function
+  return newObj;
+}
+
+console.log(phoneBook.map(countryCodes));
